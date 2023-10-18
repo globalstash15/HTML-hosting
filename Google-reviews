@@ -9,7 +9,7 @@
   <div id='reviews-container'></div>
 <script>
   // Replace 'YOUR_API_KEY' with your actual Google API key
-  const apiKey = 'AIzaSyB9vqct8J7Sc_7Ys6WJaFXP6e5plMP1nxo';
+  const apiKey = 'YOUR_API_KEY';
 
   // Replace 'PLACE_ID_FIELD' with the Webflow field that holds the Place ID for each business
   const urlParams = new URLSearchParams(window.location.search);
