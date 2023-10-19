@@ -3,8 +3,10 @@ import fetch from 'node-fetch';
 // Replace 'YOUR_API_KEY' with your actual Google API key
 const apiKey = 'AIzaSyDGYIbOkIVI6AGATXxbNmSni15YOOlupFw';
 
-// Replace 'PLACE_ID' with the Place ID for the business
-const urlParams = new URLSearchParams(window.location.search);
+const fetch = require('node-fetch');
+// Note: There's no direct equivalent for window.location.search in Node.js
+// You may need to pass the URL as a parameter or retrieve it differently.
+// ...
 const placeId = urlParams.get('placeId');
 
 async function fetchAndDisplayReviews() {
