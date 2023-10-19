@@ -1,5 +1,15 @@
 {
-"dependencies": {
-  "node-fetch": "^2.6.1",
-}
+  "name": "google-places-api-globalstash",
+  "version": "1.0.0",
+  "description": "fetching google places data",
+  "main": "Google-reviews.js",
+  "scripts": {
+    "start": "node Google-reviews.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+  },
+  "engines": {
+    "node": "18.x"
+  }
 }
