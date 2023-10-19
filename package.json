@@ -6,9 +6,6 @@
   "scripts": {
     "start": "node Google-reviews.js"
   },
-  "dependencies": {
-    "node-fetch": "^2.6.1",
-  },
   "engines": {
     "node": "18.x"
   }
