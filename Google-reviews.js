@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 // Replace 'YOUR_API_KEY' with your actual Google API key
 const apiKey = 'AIzaSyDGYIbOkIVI6AGATXxbNmSni15YOOlupFw';
