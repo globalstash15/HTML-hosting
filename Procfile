@@ -1,1 +1,1 @@
-web: node server.js
+web: node Google-reviews.js
