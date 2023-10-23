@@ -1,10 +1,10 @@
 import fetch from 'node-fetch';
 
 // Replace 'YOUR_API_KEY' with your actual Google API key
-const apiKey = 'AIzaSyCi2EKAHgUtE1eO5awzizP5lAAkwhNA370'; // Replace with your API key
+const apiKey = 'AIzaSyDGYIbOkIVI6AGATXxbNmSni15YOOlupFw';
 
-// Manually input the Place ID
-const placeId = 'ChIJyVHDdeaGqkARPAi7oXI7JkQ'; // Replace with your Place ID
+// Manually specify the placeId (you can replace this with your desired Place ID)
+const placeId = 'ChIJyVHDdeaGqkARPAi7oXI7JkQ';
 
 async function fetchAndDisplayReviews() {
   const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`;
@@ -12,7 +12,12 @@ async function fetchAndDisplayReviews() {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    if (data.result && data.result.reviews) {
+
+    // Log the entire response data
+    console.log('Response Data:', data);
+
+    // Check if 'data.result' exists before accessing 'reviews'
+    if (data.result) {
       const reviews = data.result.reviews;
 
       for (const review of reviews) {
@@ -22,7 +27,7 @@ async function fetchAndDisplayReviews() {
         console.log('-------------------');
       }
     } else {
-      console.log('No reviews found for this Place ID.');
+      console.log('No reviews found.');
     }
   } catch (error) {
     console.error(error);
