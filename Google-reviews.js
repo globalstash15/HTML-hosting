@@ -4,7 +4,7 @@ import fetch from 'node-fetch';
 const apiKey = 'AIzaSyCi2EKAHgUtE1eO5awzizP5lAAkwhNA370'; // Replace with your API key
 
 // Manually input the Place ID
-const placeId = 'ChIJY8Fg6REyGQ0Rdj1N21qSITM'; // Replace with your Place ID
+const placeId = 'ChIJyVHDdeaGqkARPAi7oXI7JkQ'; // Replace with your Place ID
 
 async function fetchAndDisplayReviews() {
   const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`;
