@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 // Replace 'YOUR_API_KEY' with your actual Google API key
-const apiKey = 'AIzaSyDGYIbOkIVI6AGATXxbNmSni15YOOlupFw';
+const apiKey = 'AIzaSyCi2EKAHgUtE1eO5awzizP5lAAkwhNA370';
 
 // Manually set the 'placeId'
 const placeId = 'ChIJY8Fg6REyGQ0Rdj1N21qSITM';
