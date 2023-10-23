@@ -3,9 +3,8 @@ import fetch from 'node-fetch';
 // Replace 'YOUR_API_KEY' with your actual Google API key
 const apiKey = 'AIzaSyDGYIbOkIVI6AGATXxbNmSni15YOOlupFw';
 
-// Get placeId from the command line arguments in a Node.js environment
-const args = process.argv.slice(2); // Remove the first two arguments (node and script filename)
-const placeId = args[0]; // Assuming placeId is the first argument
+// Manually set the 'placeId'
+const placeId = 'ChIJY8Fg6REyGQ0Rdj1N21qSITM';
 
 async function fetchAndDisplayReviews() {
   const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`;
@@ -13,6 +12,7 @@ async function fetchAndDisplayReviews() {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log('Response Data:', data); // Add this line to inspect the data
     const reviews = data.result.reviews;
 
     for (const review of reviews) {
