@@ -35,9 +35,11 @@ app.get('/', async (req, res) => {
                         h1 .name {
                             font-size: 20px;
                         }
+                        h1 .time {
+                            font size: 12px
                         h2 {color: red;}
                         p {
-                            font-weight: bold;
+                            font weight; normal
                         }
                         
                         section {
@@ -68,10 +70,10 @@ app.get('/', async (req, res) => {
                         }
                         
                         h2 span {
-                            color: yellow;
+                            color: #FFC657;
                         }
                         h2 span.empty {
-                            color: grey;
+                            color: #D3D3D3;
                         }
                     </style>
                 </head>
