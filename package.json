@@ -2,7 +2,7 @@
   "name": "google-places-api-globalstash",
   "version": "1.0.0",
   "description": "fetching google places data",
-  "main": "Google-reviews.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
