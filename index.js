@@ -18,33 +18,10 @@ app.get('/', async (req, res) => {
         let html = '<html><body>'
         const reviews = data.result.reviews;
 
-      // index.js
-      // ... Your existing code ...
-      
       for (const review of reviews) {
-        let reviewDiv = document.createElement('div');
-        reviewDiv.classList.add('review');
-      
-        let author = document.createElement('h3');
-        author.classList.add('review-author');
-        author.textContent = review.author_name;
-      
-        let rating = document.createElement('h6');
-        rating.classList.add('review-rating');
-        rating.textContent = review.rating;
-      
-        let text = document.createElement('p');
-        text.classList.add('review-text');
-        text.textContent = review.text;
-      
-        // Append elements to the reviewDiv
-        reviewDiv.appendChild(author);
-        reviewDiv.appendChild(rating);
-        reviewDiv.appendChild(text);
-      
-        // Append the reviewDiv to the reviews-container
-        document.getElementById('reviews-container').appendChild(reviewDiv);
-      }
+          let author = `<h3>${review.author_name}</h3>`
+          let rating = `<h6>${review.rating}</h6>`
+          let text = `<p>${review.text}</p>`
 
           html += author
           html += rating
