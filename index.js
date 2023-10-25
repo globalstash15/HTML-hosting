@@ -16,14 +16,62 @@ app.get('/', async (req, res) => {
 
             // Check if 'data.result' exists before accessing 'reviews'
             if (data.result) {
+                console.log(data.result)
+
+
                 let html = `
             <html>
                 <head>
+                    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
                     <style>
-                        h1 {color: blue;}
+                        h1 {
+                            font-family: 'Anton', sans-serif;    
+                        }
+                        
+                        h1 .name {
+                            font-size: 20px;
+                        }
                         h2 {color: red;}
                         p {
                             font-weight: bold;
+                        }
+                        
+                        section {
+                            margin-bottom: 30px;
+                        }
+                        
+                        .review {
+                            display: flex;
+                            margin-top: 10px;
+                            gap: 8px;
+                            align-items: center;
+                        }
+                        
+                        .review__image {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 100%;
+                            gap: 8px;
+                        }
+                        
+                        .time {
+                            margin-left: 10px;
+                            color: grey;
+                        }
+                        
+                        .review__text {
+                            margin-top: 10px;
+                        }
+                        
+                        h2 span {
+                            color: yellow;
+                        }
+                        h2 span.empty {
+                            color: grey;
                         }
                     </style>
                 </head>
@@ -31,14 +79,40 @@ app.get('/', async (req, res) => {
             `
                 const reviews = data.result.reviews
 
-                for (const review of reviews) {
-                    let author = `<h1>${review.author_name}</h1>`
-                    let rating = `<h2>${review.rating}</h2>`
-                    let text = `<p>${review.text}</p>`
+                function getStars (count) {
+                    let stars = ''
 
-                    html += author
-                    html += rating
-                    html += text
+                    for (let i = 0; i < count; i++) {
+                        stars += '<span>★</span>'
+                    }
+
+                    if (count < 5) {
+                        const missing = 5 - count
+                        for (let i = 0; i < missing; i++) {
+                            stars += '<span class="empty">★</span>'
+                        }
+                    }
+
+                    return stars
+                }
+
+                for (const review of reviews) {
+                    let item = `
+                        <section>
+                            <div class="review">
+                                <img class="review__image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxLAYuv4UjJTkN84m6O5n0XP6HDKRrh4XWci9dExTdhA&s">
+                                <div class="review__content">
+                                    <h1>
+                                        <span class="name">${review.author_name}</span> <span class="time">${review.relative_time_description}</span>
+                                    </h1>
+                                    <h2>${ getStars(review.rating)}</h2>
+                                </div> 
+                            </div>
+                            <p class="review__text">${review.text}</p>
+                        </section>
+                    `
+
+                    html += item
                 }
 
                 html += '</body></html>'
