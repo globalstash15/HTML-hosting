@@ -35,11 +35,9 @@ app.get('/', async (req, res) => {
                         h1 .name {
                             font-size: 20px;
                         }
-                        h1 .time {
-                            font size: 12px
                         h2 {color: red;}
                         p {
-                            font weight; normal
+                            font-weight: bold;
                         }
                         
                         section {
@@ -70,10 +68,10 @@ app.get('/', async (req, res) => {
                         }
                         
                         h2 span {
-                            color: #FFC657;
+                            color: yellow;
                         }
                         h2 span.empty {
-                            color: #D3D3D3;
+                            color: grey;
                         }
                     </style>
                 </head>
@@ -143,5 +141,3 @@ app.get('/', async (req, res) => {
 const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`)
-    console.log('Press Ctrl+C to quit.')
-})
