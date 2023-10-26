@@ -10,15 +10,15 @@ app.get('/', async (req, res) => {
     async function fetchAndDisplayReviews () {
         const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`
 
+        // CHANGE ME TO GET THE PLACE ID HERE
+        console.log(req.query.id)
+
         try {
             const response = await fetch(url)
             const data = await response.json()
 
             // Check if 'data.result' exists before accessing 'reviews'
             if (data.result) {
-                console.log(data.result)
-
-
                 let html = `
             <html>
                 <head>
