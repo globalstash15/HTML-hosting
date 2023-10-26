@@ -28,6 +28,14 @@ app.get('/', async (req, res) => {
                     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
                     <style>
+                        .card {
+                            background: #ffffff; 
+                            border-radius: 8px; 
+                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+                            padding: 16px; 
+                            margin: 16px; 
+                        }
+
                         h1 {
                             font-family: 'Anton', sans-serif;    
                         }
