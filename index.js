@@ -102,16 +102,18 @@ app.get('/', async (req, res) => {
                 for (const review of reviews) {
                     let item = `
                         <section>
-                            <div class="review">
-                                <img class="review__image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxLAYuv4UjJTkN84m6O5n0XP6HDKRrh4XWci9dExTdhA&s">
-                                <div class="review__content">
-                                    <h1>
-                                        <span class="name">${review.author_name}</span> <span class="time">${review.relative_time_description}</span>
-                                    </h1>
-                                    <h2>${ getStars(review.rating)}</h2>
-                                </div> 
+                            <div class="card">
+                                <div class="review">
+                                    <img class="review__image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxLAYuv4UjJTkN84m6O5n0XP6HDKRrh4XWci9dExTdhA&s">
+                                    <div class="review__content">
+                                        <h1>
+                                            <span class="name">${review.author_name}</span> <span class="time">${review.relative_time_description}</span>
+                                        </h1>
+                                        <h2>${ getStars(review.rating)}</h2>
+                                    </div> 
+                                </div>
+                                <p class="review__text">${review.text}</p>
                             </div>
-                            <p class="review__text">${review.text}</p>
                         </section>
                     `
 
