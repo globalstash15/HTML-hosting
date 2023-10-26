@@ -71,10 +71,10 @@ app.get('/', async (req, res) => {
                         }
                         
                         h2 span {
-                            color: yellow;
+                            color: #FFC657;
                         }
                         h2 span.empty {
-                            color: grey;
+                            color: #d3d3d3;
                         }
                     </style>
                 </head>
