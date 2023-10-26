@@ -4,11 +4,10 @@ import express from 'express'
 const app = express()
 
 const apiKey = 'AIzaSyCi2EKAHgUtE1eO5awzizP5lAAkwhNA370'
-const placeId = 'ChIJyVHDdeaGqkARPAi7oXI7JkQ'
 
 app.get('/', async (req, res) => {
     async function fetchAndDisplayReviews () {
-        const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`
+        const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${req.query.id}&fields=reviews&key=${apiKey}`
 
         // CHANGE ME TO GET THE PLACE ID HERE
         console.log(req.query.id)
