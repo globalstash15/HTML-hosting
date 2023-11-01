@@ -7,7 +7,7 @@ const apiKey = 'AIzaSyCi2EKAHgUtE1eO5awzizP5lAAkwhNA370'
 
 app.get('/', async (req, res) => {
     async function fetchAndDisplayReviews () {
-        const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${req.query.id}&fields=reviews%2Crating&key=${apiKey}`
+        const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${req.query.id}&fields=reviews%2Crating%2Cname&key=${apiKey}`
 
         try {
             const response = await fetch(url)
@@ -89,6 +89,7 @@ app.get('/', async (req, res) => {
             `
                 const reviews = data.result.reviews
                 const rating = data.result.rating
+                const rating = data.result.name
 
               function getStars (count) {
                     let stars = ''
@@ -113,7 +114,7 @@ app.get('/', async (req, res) => {
                     <section>
                         <div class="card">
                             <h1>
-                                <span class="name">${review.name}</span>
+                                <span class="name">${data.result.name}</span>
                             </h1>
                             <h2>
                                 <span>${rating}</span>
