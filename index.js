@@ -76,12 +76,14 @@ app.get('/', async (req, res) => {
                         }
                         
                         .rating__text {
-                            display: inline-block;
+                            display: flex;
+                            align: center;
                             margin-left: auto;
                             margin-right: auto;
                             padding: 10px;
                             gap: 8px;
                             text-align: center;
+                            align-items: center;
                         }
                         
                         .time {
