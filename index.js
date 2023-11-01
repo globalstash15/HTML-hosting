@@ -77,9 +77,7 @@ app.get('/', async (req, res) => {
                         
                         .rating__text {
                             display: flex;
-                            align: center;
-                            margin-left: auto;
-                            margin-right: auto;
+                            justify-content: center;
                             padding: 10px;
                             gap: 8px;
                             text-align: center;
