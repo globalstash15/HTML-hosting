@@ -66,11 +66,13 @@ app.get('/', async (req, res) => {
                         }
 
                         .rating {
-                            display: flex;
-                            margin-top: 10px;
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                            padding: 10px;
                             gap: 8px;
                             align-items: center;
-                            align-text: left;
+                            text-align: center;
                         }
                         
                         .time {
@@ -120,7 +122,9 @@ app.get('/', async (req, res) => {
                 html += `
                     <section>
                         <div class="card">
-                            <img class="review__image" src="https://seeklogo.com/images/G/google-logo-28FA7991AF-seeklogo.com.png">
+                            <div class="rating">
+                                <img class="review__image" src="https://seeklogo.com/images/G/google-logo-28FA7991AF-seeklogo.com.png">
+                            </div>
                             <div class="rating">
                                 <h1>
                                     <span class="name">${rating}</span>
