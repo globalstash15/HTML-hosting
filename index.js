@@ -39,15 +39,10 @@ app.get('/', async (req, res) => {
                         
                         h1 .name {
                             font-size: 20px;
-                            margin-bottom: 5px;
                         }
                         
                         h1 .time {
                             font-size: 12px;
-                        }
-                        
-                        h1 .rating__number {
-                            font-size: 20px
                         }
                         
                         h2 {color: black;}
@@ -71,6 +66,10 @@ app.get('/', async (req, res) => {
                             height: 40px;
                             border-radius: 100%;
                             gap: 8px;
+                        }
+
+                        .review__name__box {
+                            margin-bottom: 5px;
                         }
 
                         .rating {
@@ -164,7 +163,7 @@ app.get('/', async (req, res) => {
                             </div>
                             <div class="rating__text">
                                 <h1>
-                                    <span class="rating__number">${rating}</span>
+                                    <span class="name">${rating}</span>
                                 </h1>
                                     <div class="ratings">
                                         <div class="empty-stars"></div>
@@ -182,9 +181,11 @@ app.get('/', async (req, res) => {
                                 <div class="review">
                                     <img class="review__image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxLAYuv4UjJTkN84m6O5n0XP6HDKRrh4XWci9dExTdhA&s">
                                     <div class="review__content">
-                                        <h1>
-                                            <span class="name">${review.author_name}</span> <span class="time">${review.relative_time_description}</span>
-                                        </h1>
+                                        <div class="review__name__box">
+                                            <h1>
+                                                <span class="name">${review.author_name}</span> <span class="time">${review.relative_time_description}</span>
+                                            </h1>
+                                        </div>
                                         <h2>${ getStars(review.rating)}</h2>
                                     </div> 
                                 </div>
