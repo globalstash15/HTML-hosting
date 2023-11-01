@@ -87,18 +87,19 @@ app.get('/', async (req, res) => {
                 const reviews = data.result.reviews
                 const rating = data.result.rating
 
-               function getStars(count) {
-                  const fullStars = Math.floor(count); // Whole star rating
-                  const fractionalPart = count - fullStars; // Fractional part of the rating
+                function getStars(count) {
+                      const fullStars = Math.floor(count); // Whole star rating
+                      const fractionalPart = count - fullStars; // Fractional part of the rating
                       let stars = '';
-                
-                        for (let i = 0; i < fullStars; i++) {
+                    
+                      for (let i = 0; i < fullStars; i++) {
                         stars += '<span>★</span>';
                       }
                     
-                      // If there is a fractional part, add a partially filled star
+                      // Add a partially filled star for the fractional part
                       if (fractionalPart > 0) {
-                        stars += `<span style="width: ${fractionalPart * 20}px;" class="partial-star">★</span>`;
+                        const width = `${fractionalPart * 100}%`;
+                        stars += `<span class="partial-star" style="width: ${width}">★</span>`;
                       }
                     
                       // Add empty stars to complete the 5-star display
@@ -106,8 +107,9 @@ app.get('/', async (req, res) => {
                         stars += '<span class="empty">★</span>';
                       }
                     
-                  return stars;
-                }
+                      return stars;
+                    }
+
 
                 // rating
                 html += `
