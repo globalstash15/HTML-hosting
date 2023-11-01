@@ -69,7 +69,8 @@ app.get('/', async (req, res) => {
                             display: flex;
                             margin-top: 10px;
                             gap: 8px;
-                            align-items; left;
+                            align-items: center;
+                            align-text: left;
                         }
                         
                         .time {
