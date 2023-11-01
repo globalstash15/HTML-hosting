@@ -80,30 +80,6 @@ app.get('/', async (req, res) => {
                         h2 span.empty {
                             color: #d3d3d3;
                         }
-                        .rating {
-                            unicode-bidi: bidi-override;
-                            direction: rtl;
-                        }
-                        
-                        .star {
-                            display: inline-block;
-                            position: relative;
-                            width: 1.1em;
-                            color: #FFC657;
-                         }
-                        
-                        .star:before {
-                            content: "\2605"; /* Star character */
-                            position: absolute;
-                          }
-                        
-                        .empty {
-                            color: #d3d3d3;
-                          }
-                        
-                        .partial-star:before {
-                            clip: rect(0 0.55em 1.1em 0);
-                          }
                     </style>
                 </head>
                 <body>
@@ -111,26 +87,22 @@ app.get('/', async (req, res) => {
                 const reviews = data.result.reviews
                 const rating = data.result.rating
 
-                function getStars(count) {
-                      const wholeStars = Math.floor(count);
-                      const fractionalPart = count - wholeStars;
-                          let stars = '';
-                        
-                          for (let i = 0; i < wholeStars; i++) {
-                            stars += '<span class="star">\u2605</span>';
-                          }
-                        
-                          if (fractionalPart > 0) {
-                            stars += '<span class="star partial-star">\u2605</span>';
-                          }
-                        
-                          for (let i = 0; i < 5 - Math.ceil(count); i++) {
-                            stars += '<span class="star empty">\u2605</span>';
-                          }
-                    
-                      return '<span class="rating">' + stars + '</span>';
+              function getStars (count) {
+                    let stars = ''
+
+                    for (let i = 0; i < count; i++) {
+                        stars += '<span>★</span>'
                     }
 
+                    if (count < 5) {
+                        const missing = 5 - count
+                        for (let i = 0; i < missing; i++) {
+                            stars += '<span class="empty">★</span>'
+                        }
+                    }
+
+                    return stars
+                }
 
 
                 // rating
