@@ -22,6 +22,7 @@ app.get('/', async (req, res) => {
                     <link rel="preconnect" href="https://fonts.googleapis.com">
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
                     <style>
                         .card {
@@ -102,6 +103,7 @@ app.get('/', async (req, res) => {
                         h2 .large {
                             font-size: 30px
                         }
+
                     </style>
                 </head>
                 <body>
@@ -113,13 +115,13 @@ app.get('/', async (req, res) => {
                     let stars = ''
 
                     for (let i = 0; i < count; i++) {
-                        stars += '<span>★</span>'
+                        stars += '<span class="fa-solid fa-star" style="color: #ffc657;"></span>'
                     }
 
                     if (count < 5) {
                         const missing = 5 - count
                         for (let i = 0; i < missing; i++) {
-                            stars += '<span class="empty">★</span>'
+                            stars += '<span class="fa-solid fa-star" style="color: #d3d3d3;"></span>'
                         }
                     }
 
