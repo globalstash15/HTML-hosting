@@ -81,7 +81,7 @@ app.get('/', async (req, res) => {
                             color: #d3d3d3;
                         }
                         h2 .large {
-                            font-size: 16px
+                            font-size: 30px
                         }
                     </style>
                 </head>
@@ -112,11 +112,10 @@ app.get('/', async (req, res) => {
                 html += `
                     <section>
                         <div class="card">
-                            <h1><span class="name">${rating}</span>
-                                <h2>
-                                    <span class="large">${ getStars(data.result.rating)}</span>
-                                </h2>
-                            </h1>
+                            <h1><span class="name">${rating}</span></h1>
+                            <h2>
+                                <span class="large">${ getStars(data.result.rating)}</span>
+                            </h2>
                         </div>
                     </section>
                 `
