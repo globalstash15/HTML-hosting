@@ -109,7 +109,7 @@ app.get('/', async (req, res) => {
                     <section>
                         <div class="card">
                             <h1>${rating}</h1>
-                            <h2>${ getStars(result.rating)}</h2>
+                            <h2>${ getStars(data.result.rating)}</h2>
                         </div>
                     </section>
                 `
