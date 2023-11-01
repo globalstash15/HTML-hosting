@@ -134,13 +134,13 @@ app.get('/', async (req, res) => {
                     let stars = ''
 
                     for (let i = 0; i < count; i++) {
-                        stars += '<span class="fa-sharp fa-star" style="color: #ffc657;"></span>'
+                        stars += '<span class="fa-sharp fa-solid fa-star" style="color: #ffc657;"></span>'
                     }
 
                     if (count < 5) {
                         const missing = 5 - count
                         for (let i = 0; i < missing; i++) {
-                            stars += '<span class="fa-sharp fa-star" style="color: #d3d3d3;"></span>'
+                            stars += '<span class="fa-sharp fa-solid fa-star" style="color: #d3d3d3;"></span>'
                         }
                     }
 
