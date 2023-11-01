@@ -39,10 +39,17 @@ app.get('/', async (req, res) => {
                         
                         h1 .name {
                             font-size: 20px;
+                            margin-bottom: 5px;
                         }
+                        
                         h1 .time {
                             font-size: 12px;
                         }
+                        
+                        h1 .rating__number {
+                            font-size: 20px
+                        }
+                        
                         h2 {color: black;}
                         p {
                             font-weight: normal;
@@ -157,7 +164,7 @@ app.get('/', async (req, res) => {
                             </div>
                             <div class="rating__text">
                                 <h1>
-                                    <span class="name">${rating}</span>
+                                    <span class="rating__number">${rating}</span>
                                 </h1>
                                     <div class="ratings">
                                         <div class="empty-stars"></div>
