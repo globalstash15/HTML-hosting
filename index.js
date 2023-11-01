@@ -112,8 +112,11 @@ app.get('/', async (req, res) => {
                 html += `
                     <section>
                         <div class="card">
-                            <h1><span class="name">${rating}</span></h1>
+                            <h1>
+                                <span class="name">${review.name}</span>
+                            </h1>
                             <h2>
+                                <span>${rating}</span>
                                 <span class="large">${ getStars(data.result.rating)}</span>
                             </h2>
                         </div>
