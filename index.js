@@ -107,7 +107,9 @@ app.get('/', async (req, res) => {
                 // rating
                 html += `
                     <section>
-                        <h1>${rating}</h1>
+                        <div class="card">
+                            <h1>${rating}</h1>
+                        </div>
                     </section>
                 `
 
