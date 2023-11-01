@@ -87,28 +87,33 @@ app.get('/', async (req, res) => {
                 const reviews = data.result.reviews
                 const rating = data.result.rating
 
-                function getStars (count) {
-                    let stars = ''
-
-                    for (let i = 0; i < count; i++) {
-                        stars += '<span>★</span>'
-                    }
-
-                    if (count < 5) {
-                        const missing = 5 - count
-                        for (let i = 0; i < missing; i++) {
-                            stars += '<span class="empty">★</span>'
-                        }
-                    }
-
-                    return stars
+               function getStars(count) {
+                  const fullStars = Math.floor(count); // Whole star rating
+                  const fractionalPart = count - fullStars; // Fractional part of the rating
+                      let stars = '';
+                
+                        for (let i = 0; i < fullStars; i++) {
+                        stars += '<span>★</span>';
+                      }
+                    
+                      // If there is a fractional part, add a partially filled star
+                      if (fractionalPart > 0) {
+                        stars += `<span style="width: ${fractionalPart * 20}px;" class="partial-star">★</span>`;
+                      }
+                    
+                      // Add empty stars to complete the 5-star display
+                      for (let i = fullStars + 1; i < 5; i++) {
+                        stars += '<span class="empty">★</span>';
+                      }
+                    
+                  return stars;
                 }
 
                 // rating
                 html += `
                     <section>
                         <div class="card">
-                            <h1>${rating}</h1>
+                            <h1><span class="name">${rating}</span></h1>
                             <h2>${ getStars(data.result.rating)}</h2>
                         </div>
                     </section>
