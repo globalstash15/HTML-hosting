@@ -75,6 +75,16 @@ app.get('/', async (req, res) => {
                             text-align: center;
                         }
                         
+                        .rating__text {
+                            display: flex;
+                            margin-left: auto;
+                            margin-right: auto;
+                            padding: 10px;
+                            gap: 8px;
+                            align-items: center;
+                            text-align: center;
+                        }
+                        
                         .time {
                             margin-left: 10px;
                             color: grey;
@@ -125,7 +135,7 @@ app.get('/', async (req, res) => {
                             <div class="rating">
                                 <img class="review__image" src="https://seeklogo.com/images/G/google-logo-28FA7991AF-seeklogo.com.png">
                             </div>
-                            <div class="rating">
+                            <div class="rating__text">
                                 <h1>
                                     <span class="name">${rating}</span>
                                 <h2>
