@@ -112,9 +112,7 @@ app.get('/', async (req, res) => {
                 html += `
                     <section>
                         <div class="card">
-                            <h1>
-                                <span class="name">${review.name}</span>
-                            </h1>
+                            <img class="review image" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fseeklogo.com%2Fvector-logo%2F273191%2Fgoogle&psig=AOvVaw3bHe9LjPw55i-9MjF5OSfl&ust=1698898192331000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJDX6Y33oYIDFQAAAAAdAAAAABAD">
                             <h2>
                                 <span>${rating}</span>
                                 <span class="large">${ getStars(data.result.rating)}</span>
