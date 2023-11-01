@@ -112,7 +112,9 @@ app.get('/', async (req, res) => {
                 html += `
                     <section>
                         <div class="card">
-                            <img class="review__image" src="https://seeklogo.com/images/G/google-logo-28FA7991AF-seeklogo.com.png">
+                            <div class="review">
+                                <img class="review__image" src="https://seeklogo.com/images/G/google-logo-28FA7991AF-seeklogo.com.png">
+                            </div>
                             <h1>
                                 <span class="name">${rating}</span>
                             <h2>
