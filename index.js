@@ -64,6 +64,13 @@ app.get('/', async (req, res) => {
                             border-radius: 100%;
                             gap: 8px;
                         }
+
+                        .rating {
+                            display: flex;
+                            margin-top: 10px;
+                            gap: 8px;
+                            align-items; left;
+                        }
                         
                         .time {
                             margin-left: 10px;
@@ -112,14 +119,14 @@ app.get('/', async (req, res) => {
                 html += `
                     <section>
                         <div class="card">
-                            <div class="review">
-                                <img class="review__image" src="https://seeklogo.com/images/G/google-logo-28FA7991AF-seeklogo.com.png">
+                            <img class="review__image" src="https://seeklogo.com/images/G/google-logo-28FA7991AF-seeklogo.com.png">
+                            <div class="rating">
+                                <h1>
+                                    <span class="name">${rating}</span>
+                                <h2>
+                                    <span class="large">${ getStars(data.result.rating)}</span>
+                                </h2>
                             </div>
-                            <h1>
-                                <span class="name">${rating}</span>
-                            <h2>
-                                <span class="large">${ getStars(data.result.rating)}</span>
-                            </h2>
                         </div>
                     </section>
                 `
