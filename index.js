@@ -158,6 +158,7 @@ app.get('/', async (req, res) => {
                             <div class="rating__text">
                                 <h1>
                                     <span class="name">${rating}</span>
+                                </h1>
                                     <div class="ratings">
                                         <div class="empty-stars"></div>
                                         <div class="full-stars" style="width:${ Number(data.result.rating) * 2 * 10 }%"></div>
